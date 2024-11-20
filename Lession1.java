@@ -43,27 +43,31 @@ public class Lession1 {
                 cal.divideNumbers(num1,num2);
                 break;
         }
-        
 }
 }
 class Calculator {
+    double result;
     public void addNumbers(double num1, double num2) {
-        double result = num1 + num2;
+         result = num1 + num2;
         System.out.println("Kết quả của " + num1 + " + " + num2 + " = " + result);
     }
 
     public void subNumbers(double num1, double num2) {
-        double result = num1 - num2;
+         result = num1 - num2;
         System.out.println("Kết quả của " + num1 + " - " + num2 + " = " + result);
     }
 
     public void multiplyNumbers(double num1, double num2) {
-        double result = num1 * num2;
+         result = num1 * num2;
         System.out.println("Kết quả của " + num1 + " x " + num2 + " = " + result);
     }
 
     public void divideNumbers(double num1, double num2) {
-            double result = num1 / num2;
+        if (num2 != 0) {
+             result = num1 / num2;
             System.out.println("Kết quả của " + num1 + " : " + num2 + " = " + result);
+        } else {
+            System.out.println(" Không thể chia cho 0");
+        }
     }
 };
