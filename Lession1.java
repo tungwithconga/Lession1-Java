@@ -21,34 +21,53 @@ public class Lession1 {
         System.out.println("4. Chia");
         
         int choice = scanner.nextInt();
-        if(choice >= 5){
-            System.out.println("Lựa chọn không hợp lệ");
-        }else{
-            System.out.println("Nhập số thứ nhất: ");
-            double num1 = scanner.nextDouble();
-            System.out.println("Nhập số thứ hai:");
-            double num2 = scanner.nextDouble();
-                    double result;
+        Calculator cal = new Calculator();
+        
+        System.out.println("Nhập vào số thứ nhất: ");
+        double num1 = scanner.nextDouble();
+        System.out.println("Nhập vào số thứ hai: ");
+        double num2 = scanner.nextDouble();
+        
+        
         switch(choice){
             case 1:
-                result = num1 + num2;
-                System.out.println("Kết quả của" + num1 + "+" + num2 + "=" + result);
+                cal.addNumbers(num1,num2);
                 break;
             case 2:
-                result = num1 - num2;
-                System.out.println("Kết quả của" + num1 +"-" + num2 + "=" + result);
+                cal.subNumbers(num1,num2);
                 break;
             case 3:
-                result = num1 * num2;
-                System.out.println("Kết quả của" + num1 + "x" + num2 + "=" + result);
+                cal.multiplyNumbers(num1,num2);
                 break;
             case 4:
-                result = num1 / num2;
-                System.out.println("Kết quả của" + num1 + ":" + num2 + "=" + result);
+                cal.divideNumbers(num1,num2);
                 break;
-            default:
-                System.out.println("Lựa chọn không hợp lệ ");
         }
-        }
+        3
 }
 }
+class Calculator {
+    public void addNumbers(double num1, double num2) {
+        double result = num1 + num2;
+        System.out.println("Kết quả của " + num1 + " + " + num2 + " = " + result);
+    }
+
+    public void subNumbers(double num1, double num2) {
+        double result = num1 - num2;
+        System.out.println("Kết quả của " + num1 + " - " + num2 + " = " + result);
+    }
+
+    public void multiplyNumbers(double num1, double num2) {
+        double result = num1 * num2;
+        System.out.println("Kết quả của " + num1 + " x " + num2 + " = " + result);
+    }
+
+    public void divideNumbers(double num1, double num2) {
+        if (num2 != 0) {
+            double result = num1 / num2;
+            System.out.println("Kết quả của " + num1 + " : " + num2 + " = " + result);
+        } else {
+            System.out.println("Lỗi: Không thể chia cho 0.");
+        }
+    }
+};
